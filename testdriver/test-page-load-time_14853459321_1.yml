@@ -1,0 +1,27 @@
+version: 4.2.29
+session: 6819b84a47c6895d7c40faad
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Open the application page.
+    commands:
+      - command: hover-text
+        text: teams.microsoft.com/v2/
+        description: URL bar in Google Chrome
+        action: click
+      - command: press-keys
+        keys:
+          - enter
+  - prompt: Measure the load time.
+    commands:
+      - command: press-keys
+        keys:
+          - f5
+      - command: wait
+        timeout: 5000
+  - prompt: Assert that the load time is within acceptable limits.
+    commands:
+      - command: assert
+        expect: the page content is fully visible

@@ -1,0 +1,25 @@
+version: 4.2.29
+session: 6819b8490ec47fe2e16b6eaf
+steps:
+  - prompt: /run testdriver\login.yml
+    commands:
+      - command: run
+        file: testdriver\login.yml
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Ensure the URL is correct for the login page.
+    commands:
+      - command: assert
+        expect: the URL is "teams.microsoft.com/v2/"
+  - prompt: Enter the username "gunther@waldofriends.onmicrosoft.com".
+    commands:
+      - command: assert
+        expect: the username is "gunther@waldofriends.onmicrosoft.com"
+  - prompt: Enter the password "Ch@ndler".
+    commands:
+      - command: hover-text
+        text: Password
+        description: password input field in the login form
+        action: click
+      - command: type
+        text: Ch@ndler

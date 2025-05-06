@@ -1,0 +1,24 @@
+version: 4.2.29
+session: 6819b8490ec47fe2e16b6eb1
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: hover-text
+        text: teams.microsoft.com/v2/
+        description: address bar in Google Chrome
+        action: click
+  - prompt: Log in with valid credentials.
+    commands:
+      - command: hover-text
+        text: Save
+        description: save button in the login prompt
+        action: click
+  - prompt: Navigate to the user profile section.
+    commands:
+      - command: hover-image
+        description: circular profile icon with a person silhouette in the top right corner
+        action: click
+  - prompt: Assert that user details are displayed correctly.
+    commands:
+      - command: assert
+        expect: the user details including desk and parking information are displayed

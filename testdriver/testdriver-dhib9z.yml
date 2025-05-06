@@ -1,0 +1,45 @@
+version: 4.2.29
+session: 6819b44547c6895d7c40fa91
+steps:
+  - prompt: >-
+      login with username "gunther@waldofriends.onmicrosoft.com" and password
+      "Ch@ndler"
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Sign in
+        description: sign in button on the Microsoft Teams page
+        action: click
+  - prompt: >-
+      login with username "gunther@waldofriends.onmicrosoft.com" and password
+      "Ch@ndler"
+    commands:
+      - command: hover-text
+        text: Email, phone, or Skype
+        description: email input field on the Microsoft sign-in page
+        action: click
+      - command: type
+        text: gunther@waldofriends.onmicrosoft.com
+      - command: press-keys
+        keys:
+          - enter
+      - command: wait
+        timeout: 2000
+      - command: hover-text
+        text: Password
+        description: password input field on the Microsoft sign-in page
+        action: click
+      - command: type
+        text: Ch@ndler
+      - command: press-keys
+        keys:
+          - enter
+  - prompt: >-
+      login with username "gunther@waldofriends.onmicrosoft.com" and password
+      "Ch@ndler"
+    commands:
+      - command: hover-text
+        text: 'Yes'
+        description: stay signed in confirmation button
+        action: click
